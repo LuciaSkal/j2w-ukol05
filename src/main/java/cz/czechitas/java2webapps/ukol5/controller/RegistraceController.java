@@ -27,18 +27,16 @@ public class RegistraceController {
 
   @PostMapping("")
   public Object form(@Valid @ModelAttribute("form") RegistrationForm form, BindingResult bindingResult) {
-   int age = (form.getBirthDate().until(LocalDate.now()).getYears());
+      if (bindingResult.hasErrors()) {
+          return "fillForm";
+      }
 
-   if ( age >= 15 || age < 9 ) {
-        return "ageAlert";
-    }
+      int age = (form.getBirthDate().until(LocalDate.now()).getYears());
+      if ( age >= 15 || age < 9 ) {
+          return "ageAlert";
+      }
 
-    if (bindingResult.hasErrors()) {
-      return "fillForm";
-    }
-
-    return new ModelAndView("registrationProceed")
+      return new ModelAndView("registrationProceed")
             .addObject("registrationSuccess", "Registrace byla vytvořena.");
-  }
-
+      }
 }
