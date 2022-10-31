@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    font-family: 'Titillium Web', sans-serif;
+    background-color: white;
+    color: darkslategray;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+    height: 1.3rem;
+}
+
+.basket {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid silver;
+    border-radius: 10px;
+    background-color: aliceblue;
+    box-shadow: 0 0 10px darkgray;
+}
+
+.basket .row {
+    display: block;
+    margin-top: 1em;
+}
+
+.basket .group {
+    display: contents;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.basket .controls.row {
+    display: flex;
+    justify-content: center;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+header {
+    margin-bottom: 2rem;
+}

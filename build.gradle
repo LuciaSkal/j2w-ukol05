@@ -18,6 +18,7 @@ dependencies {
     }
     implementation 'org.springframework.boot:spring-boot-starter-jetty'
     implementation 'org.springframework.boot:spring-boot-starter-freemarker'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'no.api.freemarker:freemarker-java8:2.1.0'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
