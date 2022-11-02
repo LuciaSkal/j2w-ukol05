@@ -9,7 +9,9 @@
 <body>
 <div class="container">
     <div class="basket">
-        <h1>${registrationSuccess}</h1>
+        <div>Registrace vytvořena pro ${firstName} ${lastName}</div>
+        <span>Informace budou zaslany na ${parentEmail}.</span>
+        <span>V prípadě možných změn Vás informujeme ihned na Vaše telefonni číslo ${parentPhone}</span>
         <div>Ďekujeme. :-)</div>
     </div>
 </div>

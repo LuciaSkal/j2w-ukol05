@@ -37,6 +37,9 @@ public class RegistraceController {
       }
 
       return new ModelAndView("registrationProceed")
-            .addObject("registrationSuccess", "Registrace byla vytvořena.");
+            .addObject("firstName", form.getFirstName())
+            .addObject("lastName", form.getLastName())
+            .addObject("parentEmail", form.getParentEmail())
+            .addObject("parentPhone", form.getParentPhone());
       }
 }
