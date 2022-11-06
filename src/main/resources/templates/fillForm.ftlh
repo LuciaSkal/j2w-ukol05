@@ -27,12 +27,12 @@
         <div class="row">Pohlaví:</div>
         <div class="group">
             <div>
-                <input id="chlapec" type="radio" name="gender" value="Chlapec"/>
-                <label for="chlapec">Chlapec</label>
+                <input id="gender1" type="radio" name="gender" value="MALE"/>
+                <label for="gender1">Chlapec</label>
             </div>
             <div>
-                <input id="divka" type="radio" name="gender" value="Dívka"/>
-                <label for="divka">Dívka</label>
+                <input id="gender2" type="radio" name="gender" value="FEMALE"/>
+                <label for="gender2">Dívka</label>
             </div>
         </div>
         [@spring.bind "form.gender"/]

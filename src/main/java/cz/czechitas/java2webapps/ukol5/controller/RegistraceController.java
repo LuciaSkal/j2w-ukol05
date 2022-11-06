@@ -18,28 +18,28 @@ import java.time.LocalDate;
 @RequestMapping("/")
 public class RegistraceController {
 
-  @GetMapping("")
-  public ModelAndView index() {
-    ModelAndView modelAndView = new ModelAndView("fillForm");
-    modelAndView.addObject("form", new RegistrationForm());
-    return modelAndView;
-  }
+    @GetMapping("")
+    public ModelAndView index() {
+        ModelAndView modelAndView = new ModelAndView("fillForm");
+        modelAndView.addObject("form", new RegistrationForm());
+        return modelAndView;
+    }
 
-  @PostMapping("")
-  public Object form(@Valid @ModelAttribute("form") RegistrationForm form, BindingResult bindingResult) {
-      if (bindingResult.hasErrors()) {
-          return "fillForm";
-      }
+    @PostMapping("")
+    public ModelAndView form(@Valid @ModelAttribute("form") RegistrationForm form, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return new ModelAndView("fillForm");
+        }
 
-      int age = (form.getBirthDate().until(LocalDate.now()).getYears());
-      if ( age >= 15 || age < 9 ) {
-          return "ageAlert";
-      }
+        int age = (form.getBirthDate().until(LocalDate.now()).getYears());
+        if (age >= 15 || age < 9) {
+            return new ModelAndView("ageAlert");
+        }
 
-      return new ModelAndView("registrationProceed")
-            .addObject("firstName", form.getFirstName())
-            .addObject("lastName", form.getLastName())
-            .addObject("parentEmail", form.getParentEmail())
-            .addObject("parentPhone", form.getParentPhone());
-      }
+        return new ModelAndView("registrationProceed")
+                .addObject("firstName", form.getFirstName())
+                .addObject("lastName", form.getLastName())
+                .addObject("parentEmail", form.getParentEmail())
+                .addObject("parentPhone", form.getParentPhone());
+    }
 }
